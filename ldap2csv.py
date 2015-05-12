@@ -5,12 +5,11 @@
 import ldap,sys
 
 cfg=dict()
-cfg['server_uri']="ldap://ldap.gl3"
+cfg['server_uri']="ldap://ldap.domain.com"
 cfg['bind_dn']=""
-cfg['search_base']="ou=nordic,ou=staff,dc=greenpeace,dc=org"
+cfg['search_base']="ou=staff,dc=domain,dc=com"
 cfg['bind_pw']=""
 cfg['filter']="(!(title=*functional*))"
-#cfg['filter']="(uid=adelgado)"
 cfg['fields']=['cn','description']
 
 myldap = ldap.initialize('%s' % cfg['server_uri'])
