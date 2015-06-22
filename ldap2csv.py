@@ -90,7 +90,7 @@ def _main():
 		result=myldap.search_s(cfg['search_base'],ldap.SCOPE_SUBTREE,cfg['filter'],cfg['fields'])
 	except ldap.NO_SUCH_OBJECT,e:
 		Message("Error searching for the fields '%s' in the base DN '%s' with the filter '%s'" % (cfg['fields'],cfg['search_base'],cfg['filter']),True)
-		sys.exit(0)
+		sys.exit(2)
 	records=list()
 	for dn,entry in result:
 		record=dict()
